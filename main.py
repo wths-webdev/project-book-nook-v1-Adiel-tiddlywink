@@ -21,19 +21,19 @@ while True:
     user_input = input("What'cha wannna do?")
      # Add
         # ask for book 
-    if user_input == "Add":
+    if user_input == "add":
         book_name = input("Which book would you like to add?")
         # add to list 
-        My_Books.append(book_name)
+        My_Books.append(book_name.isalpha())
         # success message
         print("Book has been successfully added.")
 
     # Show 
         # print out list with numbers
-    elif user_input == "Show":
+    elif user_input == "show":
         print (My_Books)
-    # Remove 
-    elif user_input == "Remove":
+    # Remove
+    elif user_input == "remove":
         # ask for book
         book_name2 = input("Which book would you like to remove?")
         # remove the book
@@ -41,7 +41,7 @@ while True:
         # success message
         print("Book has been successfully removed.") 
     # Count 
-    elif user_input == "Count":
+    elif user_input == "count":
         # print out the message with count number
         print(len(My_Books))
         print("You have books")
