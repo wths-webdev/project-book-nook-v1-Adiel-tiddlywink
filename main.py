@@ -11,41 +11,48 @@ print("\nWelcome to...\n"
     " //________.|.________\\\n"
     "`----------`-'----------'\n")
 #commands
+# Create empty list
+My_Books = []
+
 print("Add Book (Add)")
 print("Show Books (Show)")
 print("Remove Books (Remove)")
 print("Count Books (Count)")
 print("Quit Nook (Quit)")
-#loop
+
+# loop
 while True:
-    user_input = input("What'cha wannna do?")
-     # Add
-        # ask for book 
+    user_input = input("What'cha wanna do? ").strip().lower()
+
+    # Add
     if user_input == "add":
-        book_name = input("Which book would you like to add?")
-        # add to list 
-        My_Books.append(book_name.isalpha())
-        # success message
+        book_name = input("Which book would you like to add? ")
+        My_Books.append(book_name)
         print("Book has been successfully added.")
 
-    # Show 
-        # print out list with numbers
+    # Show
     elif user_input == "show":
-        print (My_Books)
+        print(My_Books)
+
     # Remove
     elif user_input == "remove":
-        # ask for book
-        book_name2 = input("Which book would you like to remove?")
-        # remove the book
-        My_Books.remove(book_name2)
-        # success message
-        print("Book has been successfully removed.") 
-    # Count 
+        book_name2 = input("Which book would you like to remove? ")
+
+        if book_name2 in My_Books:
+            My_Books.remove(book_name2)
+            print("Book has been successfully removed.")
+        else:
+            print("Book not found in your collection.")
+
+    # Count
     elif user_input == "count":
-        # print out the message with count number
-        print(len(My_Books))
-        print("You have books")
+        print("You have", len(My_Books), "books.")
+
     # Quit
-    else:
+    elif user_input == "quit":
         print("Goodbye, thanks for visiting the Book Nook!")
         break
+
+    # Invalid input
+    else:
+        print("Invalid option. Please try again.")
